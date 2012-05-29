@@ -2,15 +2,14 @@ function loadJSONP() {
     
  // Get MapRoot JSON from Maps Engine Directory
 
-// URL of the external script
-var url = 'https://mapsenginedirectory.appspot.com/maproot/?acl=public&format=jsonp&callback=parseMapRoot&map=04996796288385000359-08363259842776504974-4';
+// URL of the external script (Step 1)
 
-// Create Insertable Script
-var script = document.createElement('script');
-script.setAttribute('src', url);
 
-// load the script
-document.getElementsByTagName('head')[0].appendChild(script);    
+// Create Insertable Script (Step 2)
+
+
+// load the script (Step 3)
+   
     
 }    
 
@@ -20,16 +19,12 @@ function parseMapRoot(data) {
     $("#side_bar").append('<ul id="layer_picker" style="list-style-type: none;"></ul>');
     var index = 0
     setMapBounds(data.bounds);
+    //Loop Through All The Layers of the Map, and Create MapDataLayers For Each One
     $.each(data.layers, function(index) {
         $("#layer_picker").append('<li><input type="checkbox" id="' + index + '" class="layer"/><label for="' + index + '">' + data.layers[index].layerName.replace("Frederick County Virginia", "").replace("County Mosaic", "") + '</label></li>');
         
-        gebLayer = new google.maps.visualization.MapDataLayer({
-            mapId: data.assetId,
-            layerId: data.layers[index].key,
-            suppressInfoWindows: false,
-            oAuthToken: "public"
-        });
-        gebLayers.push(gebLayer);
+        // Create the MapDataLayer, and Add it To An Array (Step 4)
+        
         
     });  
   
