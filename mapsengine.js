@@ -2,13 +2,22 @@ function loadJSONP() {
     
  // Get MapRoot JSON from Maps Engine Directory
 
-// URL of the external script (Step 1)
+// URL of External Script (Step 1)
+///////////////////////////////////
+// PASTE STEP 1 BELOW HERE //////
+////////////////////////////////
 
 
 // Create Insertable Script (Step 2)
+///////////////////////////////////
+// PASTE STEP 2 BELOW HERE //////
+////////////////////////////////
 
 
 // load the script (Step 3)
+///////////////////////////////////
+// PASTE STEP 3 BELOW HERE //////
+////////////////////////////////
    
     
 }    
@@ -24,6 +33,9 @@ function parseMapRoot(data) {
         $("#layer_picker").append('<li><input type="checkbox" id="' + index + '" class="layer"/><label for="' + index + '">' + data.layers[index].layerName.replace("Frederick County Virginia", "").replace("County Mosaic", "") + '</label></li>');
         
         // Create the MapDataLayer, and Add it To An Array (Step 4)
+        ///////////////////////////////////
+        // PASTE STEP 4 BELOW HERE //////
+        ////////////////////////////////
         
         
     });  
